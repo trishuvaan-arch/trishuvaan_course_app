@@ -21,8 +21,9 @@ const port = process.env.PORT || 3001;
 ---------------------------------------------------- */
 app.use(
   cors({
-    origin: "*",
-    methods: ["GET", "POST"],
+    origin: process.env.VITE_API_BASE,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
   })
 );
 app.use(express.json());
